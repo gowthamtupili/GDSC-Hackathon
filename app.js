@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const session = require('express-session');
-
+const { optimal_floor } = require('./utils/backend')
 
 const app = express();
 
@@ -31,7 +31,7 @@ app.use(methodOverride('_method'));
 
 
 app.get('/',(req, res) => {
-    res.render('homePage');
+    res.render('homePage', {optimal_floor});
 })
 
 app.all('*', (req,res,next) => {
