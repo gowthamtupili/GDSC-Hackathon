@@ -1,12 +1,4 @@
-// function suggest() {
-//   var min_index = 0;
-//   for (let index = 1; index < floors.length(); index++) {
-//     if (floors[i] < floors[min]) {
-//       min_index = i;
-//     }
-//   }
-//   return min_index;
-// }
+
 
 var min_index = 0;
 
@@ -26,8 +18,4 @@ function count() {
 }
 count();
 
-<<<<<<< HEAD
-module.exports = { min_index };
-=======
 module.exports = { min_index, floors };
->>>>>>> cc31a2ce75c29f29a236ff22518193db40c9b1e8
