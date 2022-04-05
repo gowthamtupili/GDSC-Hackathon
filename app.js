@@ -10,8 +10,8 @@ const ExpressError = require('./utils/ExpressError');
 const catchAsync = require('./utils/catchAsync');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const { optimal_floor } = require('./utils/backend');
-
+const { returned_floor } = require('./utils/backend');
+const { floors } = require('./utils/backend');
 const app = express();
 
 
@@ -73,13 +73,15 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req, res) => {
-  res.render("homePage", { optimal_floor });
+  res.render("homePage", { returned_floor });
 });
 
 
 app.get('/login', (req, res) => {
   res.render('users/login');
 })
+
+
 
 
 app.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), (req, res) => {

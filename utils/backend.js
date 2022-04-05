@@ -1,5 +1,3 @@
-
-
 var min_index = 0;
 
 var floors = [0, 0, 0, 0];
@@ -17,6 +15,16 @@ function count() {
   }
 }
 count();
-
+var returned_floor;
 const optimal_floor = min_index;
-module.exports = { optimal_floor, floors };
+if (optimal_floor == 0) {
+  returned_floor = "GROUND FLOOR";
+} else if (optimal_floor == 1) {
+  returned_floor = "FIRST FLOOR";
+} else if (optimal_floor == 2) {
+  returned_floor= "SECOND FLOOR"
+}
+else {
+  returned_floor="THIRD FLOOR"
+}
+module.exports = { returned_floor, floors };
