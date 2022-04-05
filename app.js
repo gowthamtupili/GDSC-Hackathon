@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const methodOverride = require("method-override");
 const session = require("express-session");
-const { min_index } = require("./utils/backend");
+const { min_index, floors } = require("./utils/backend");
 
 const app = express();
 
