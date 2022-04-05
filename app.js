@@ -9,12 +9,15 @@ var { min_index } = require("./utils/backend");
 const ExpressError = require('./utils/ExpressError');
 const catchAsync = require('./utils/catchAsync');
 const passport = require('passport');
-const LocalStrategy = require('passport-local')
+const LocalStrategy = require('passport-local');
+const { optimal_floor } = require('./utils/backend');
 
 const app = express();
 
 
 const User = require('./models/user');
+const MReview = require('./models/mainreview');
+const Review = require('./models/review');
 
 mongoose.connect('mongodb://localhost:27017/gdsc-hackathon')
     .then(() => {
@@ -70,7 +73,7 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req, res) => {
-  res.render("homePage", { min_index });
+  res.render("homePage", { optimal_floor });
 });
 
 
@@ -111,6 +114,12 @@ app.post('/register', catchAsync(async (req, res, next) => {
       res.redirect('register');
   }
 }));
+
+
+app.get('/reviews', catchAsync(async (req, res) => {
+  const MainReview = await MReview.find({});
+  res.render('reviewPages/index', { MainReview })
+}))
 
 
 app.all("*", (req, res, next) => {

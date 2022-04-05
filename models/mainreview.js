@@ -5,9 +5,7 @@ const Schema = mongoose.Schema;
 const MReviewSchema = new Schema({
     title: String,
     image: String,
-    price: Number,
     description: String,
-    location: String,
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User'

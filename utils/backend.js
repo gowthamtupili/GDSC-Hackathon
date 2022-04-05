@@ -18,4 +18,5 @@ function count() {
 }
 count();
 
-module.exports = { min_index, floors };
+const optimal_floor = min_index;
+module.exports = { optimal_floor, floors };
