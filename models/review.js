@@ -2,15 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const PersonSchema = new Schema ({
-    name: String,
-    rollNumber: String,
-    reviews: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Review'
-        }
-    ],
+const ReviewSchema = new Schema ({
+    review: String,
+    rating: Number,
+    view: String, 
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
     
 }) 
 

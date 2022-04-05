@@ -22,8 +22,7 @@ function count() {
       min_index = index;
     }
   }
-  console.log(min_index);
 }
 count();
 
-module.exports = min_index;
+module.exports = { min_index };
