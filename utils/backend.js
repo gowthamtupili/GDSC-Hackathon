@@ -10,9 +10,10 @@
 
 var min_index = 0;
 
+var floors = [0, 0, 0, 0];
+
 function count() {
   // FLoors has the number of people in each floor.
-  var floors = [0, 0, 0, 0];
   const data = require("../dataset.json");
   data.Students.forEach((e) => {
     floors[e.floor]++;
@@ -25,4 +26,8 @@ function count() {
 }
 count();
 
+<<<<<<< HEAD
 module.exports = { min_index };
+=======
+module.exports = { min_index, floors };
+>>>>>>> cc31a2ce75c29f29a236ff22518193db40c9b1e8
